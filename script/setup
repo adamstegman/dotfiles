@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+cd "$(dirname $0)"/..
+DOTFILES_ROOT="$(pwd)"
+
+find "$DOTFILES_ROOT" -name install.sh | while read installer; do sh -c "${installer}"; done
