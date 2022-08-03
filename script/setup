@@ -7,8 +7,11 @@ cd "$(dirname $0)"/..
 # Ordered so dependencies are resolved
 declare -a packages=(
   homebrew
+  nova
 )
 for package in "${packages[@]}"; do
-  echo "🔵 Installing $package..."
-  sh -c "$package/install.sh"
+  if [ -f "$package/install.sh" ]; then
+    echo "🔵 Installing $package..."
+    sh -c "$package/install.sh"
+  fi
 done
