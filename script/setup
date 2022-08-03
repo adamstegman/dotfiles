@@ -1,8 +1,14 @@
-#!/bin/zsh
+#!/usr/bin/env sh
 
 set -euo pipefail
 
 cd "$(dirname $0)"/..
-DOTFILES_ROOT="$(pwd)"
 
-find "$DOTFILES_ROOT" -name install.sh | while read installer; do sh -c "${installer}"; done
+# Ordered so dependencies are resolved
+declare -a packages=(
+  homebrew
+)
+for package in "${packages[@]}"; do
+  echo "🔵 Installing $package..."
+  sh -c "$package/install.sh"
+done
