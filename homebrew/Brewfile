@@ -11,10 +11,6 @@ cask "iterm2"
 cask "nova"
 cask "runjs"
 
-# Ruby
-brew "chruby"
-brew "ruby-install"
-
 # Recursive Mono font
 tap "homebrew/cask-fonts"
 cask "homebrew/cask-fonts/font-recursive-code", greedy: true
