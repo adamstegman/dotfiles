@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -euo pipefail
+set -eu
 
 if ! which zsh >/dev/null; then
   echo "❎ Skipping zsh, it is not installed"

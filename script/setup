@@ -1,17 +1,17 @@
 #!/usr/bin/env sh
 
-set -euo pipefail
+set -eu
 
 cd "$(dirname $0)"/..
 
 # Ordered so dependencies are resolved
-declare -a packages=(
-  homebrew
-  nova
-  bash
-  zsh
-)
-for package in "${packages[@]}"; do
+packages="
+homebrew
+nova
+bash
+zsh
+"
+echo "$packages" | while read package; do
   if [ -f "$package/install.sh" ]; then
     echo "🔵 Installing $package..."
     sh -c "$package/install.sh"

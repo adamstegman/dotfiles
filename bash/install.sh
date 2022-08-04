@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -euo pipefail
+set -eu
 
 if ! which bash >/dev/null; then
   echo "❎ Skipping bash, it is not installed"

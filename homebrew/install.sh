@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -euo pipefail
+set -eu
 
 if [ ! "$(uname -s)" = "Darwin" ]; then
   echo "❎ Skipping Homebrew, not on a Mac"
