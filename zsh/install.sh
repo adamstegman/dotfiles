@@ -2,9 +2,7 @@
 
 set -euo pipefail
 
-if which zsh >/dev/null; then
-  echo "🟢 zsh is already installed"
-else
+if ! which zsh >/dev/null; then
   echo "❎ Skipping zsh, it is not installed"
   exit 0
 fi

@@ -1,0 +1,35 @@
+set -o vi
+
+shopt -s cdspell
+shopt -s histappend
+shopt -s nocaseglob
+
+# no suspend with C-s
+stty -ixon
+
+alias be='bundle exec '
+alias ll='ls -alFGh '
+
+# Allow aliases to be used with these commands
+alias xargs='xargs '
+
+# Reset
+Color_Off='\[\e[0m\]'       # Text Reset
+# Regular Colors
+Black='\[\e[0;30m\]'        # Black
+Red='\[\e[0;31m\]'          # Red
+Green='\[\e[0;32m\]'        # Green
+Yellow='\[\e[0;33m\]'       # Yellow
+Blue='\[\e[0;34m\]'         # Blue
+Purple='\[\e[0;35m\]'       # Purple
+Cyan='\[\e[0;36m\]'         # Cyan
+White='\[\e[0;37m\]'        # White
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PS1="[${Blue}\t${Color_Off}] ${Purple}\w${Color_Off}\n${Green}\$${Color_Off} "
+
+# refresh bash history to support multiple sessions
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
