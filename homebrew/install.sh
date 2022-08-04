@@ -2,7 +2,9 @@
 
 set -eu
 
-if [ ! "$(uname -s)" = "Darwin" ]; then
+. ./util/platform.sh
+
+if ! is_mac_os; then
   echo "❎ Skipping Homebrew, not on a Mac"
   exit
 fi

@@ -7,6 +7,7 @@ cd "$(dirname $0)"/..
 # Ordered so dependencies are resolved
 packages="
 homebrew
+iterm2
 nova
 bash
 zsh
