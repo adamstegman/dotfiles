@@ -22,5 +22,6 @@ else
 fi
 
 cp zsh/themes/* "$HOME/.oh-my-zsh/custom/themes/"
-cp zsh/zshrc "$HOME/.zshrc"
+# Don't overwrite local changes to .zshrc so local applications that write to it are safe
+[ -f "$HOME/.zshrc" ] || cp zsh/zshrc "$HOME/.zshrc"
 echo "✅ zsh setup is complete"

@@ -7,5 +7,5 @@ if ! which bash >/dev/null; then
   exit 0
 fi
 
-cp bash/bash_profile "$HOME/.bash_profile"
+[ -f "$HOME/.bash_profile" ] || cp bash/bash_profile "$HOME/.bash_profile"
 echo "✅ bash setup is complete"
