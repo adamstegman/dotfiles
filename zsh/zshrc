@@ -116,3 +116,6 @@ if which brew >/dev/null; then
   test -e "$(brew --prefix)/opt/chruby/share/chruby/auto.sh" && source "$(brew --prefix)/opt/chruby/share/chruby/auto.sh"
   test -e "$(brew --prefix)/opt/asdf/libexec/asdf.sh" && source "$(brew --prefix)/opt/asdf/libexec/asdf.sh"
 fi
+type rbenv >/dev/null && eval "$(rbenv init - zsh)"
+type pyenv >/dev/null && eval "$(pyenv init -)"
+type nodenv >/dev/null && eval "$(nodenv init -)"
