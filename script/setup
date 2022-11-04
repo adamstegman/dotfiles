@@ -11,6 +11,7 @@ iterm2
 nova
 bash
 zsh
+git
 "
 echo "$packages" | while read package; do
   if [ -f "$package/install.sh" ]; then
