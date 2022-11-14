@@ -8,6 +8,7 @@ shopt -s nocaseglob
 stty -ixon
 
 alias be='bundle exec '
+alias gst='git status -s '
 alias ll='ls -alFGh '
 
 # Allow aliases to be used with these commands

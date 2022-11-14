@@ -11,7 +11,6 @@ git config --global user.name "Adam Stegman"
 
 git config --global alias.ci commit
 git config --global alias.co checkout
-git config --global alias.st "status -s"
 
 git config --global push.default simple
 
