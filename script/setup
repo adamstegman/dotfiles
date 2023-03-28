@@ -1,21 +1,24 @@
 #!/usr/bin/env sh
 
-set -eu
+set -u
 
 cd "$(dirname $0)"/..
 
 # Ordered so dependencies are resolved
 packages="
 homebrew
+git
 iterm2
 nova
 bash
 zsh
-git
 "
 echo "$packages" | while read package; do
   if [ -f "$package/install.sh" ]; then
     echo "🔵 Installing $package..."
     sh -c "$package/install.sh"
+    if [ $? -gt 0 ]; then
+      echo "❌ $package failed!"
+    fi
   fi
 done
