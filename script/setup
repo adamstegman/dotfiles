@@ -16,9 +16,6 @@ zsh
 echo "$packages" | while read package; do
   if [ -f "$package/install.sh" ]; then
     echo "🔵 Installing $package..."
-    sh -c "$package/install.sh"
-    if [ $? -gt 0 ]; then
-      echo "❌ $package failed!"
-    fi
+    sh -c "$package/install.sh" || echo "❌ $package failed!"
   fi
 done

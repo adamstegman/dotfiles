@@ -1,3 +1,4 @@
+# adamstegman
 set -o vi
 
 shopt -s cdspell
@@ -28,7 +29,10 @@ White='\[\e[0;37m\]'        # White
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-export PS1="[${Blue}\t${Color_Off}] ${Purple}\w${Color_Off}\n${Green}\$${Color_Off} "
+# Do not override the default prompt on Codespaces
+if [ ! -d "/workspaces/.codespaces/.persistedshare/dotfiles" ]; then
+  export PS1="[${Blue}\t${Color_Off}] ${Purple}\w${Color_Off}\n${Green}\$${Color_Off} "
+fi
 
 # refresh bash history to support multiple sessions
 export HISTSIZE=5000
