@@ -7,6 +7,6 @@ if ! which bash >/dev/null; then
   exit 0
 fi
 
-# Don't overwrite local changes to .bash_profile so local applications that write to it are safe
-grep -q '# adamstegman' "$HOME/.bash_profile" || cat bash/bash_profile >> "$HOME/.bash_profile"
+# Don't overwrite local changes to .bashrc so local applications that write to it are safe
+grep -q '# adamstegman' "$HOME/.bashrc" || cat bash/bashrc >> "$HOME/.bashrc"
 echo "✅ bash setup is complete"
