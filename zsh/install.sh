@@ -10,8 +10,7 @@ fi
 if [ "$(basename "$SHELL")" = "zsh" ]; then
   echo "🟢 zsh is already in use"
 else
-  chsh -s "$(which zsh)"
-  echo "🟢 zsh will load on next login"
+  echo "⚠️  current shell is not zsh"
 fi
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
@@ -23,5 +22,5 @@ fi
 
 cp zsh/themes/* "$HOME/.oh-my-zsh/custom/themes/"
 # Don't overwrite local changes to .zshrc so local applications that write to it are safe
-grep '# adamstegman' "$HOME/.zshrc" || cat zsh/zshrc >> "$HOME/.zshrc"
+grep -q '# adamstegman' "$HOME/.zshrc" || cat zsh/zshrc >> "$HOME/.zshrc"
 echo "✅ zsh setup is complete"
