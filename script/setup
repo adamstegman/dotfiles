@@ -9,7 +9,6 @@ packages="
 homebrew
 git
 iterm2
-nova
 bash
 zsh
 env

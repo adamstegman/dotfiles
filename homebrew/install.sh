@@ -12,7 +12,9 @@ fi
 if which brew >/dev/null; then
   echo "🟢 Homebrew is already installed"
 else
-  echo "❌ Homebrew is not installed, are you using strap.sh?"
+  echo "🔵 Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "✅ Homebrew installed"
 fi
 
 echo "🔵 Installing Homebrew packages..."

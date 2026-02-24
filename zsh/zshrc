@@ -2,7 +2,7 @@
 export ZSH_DISABLE_COMPFIX=true
 
 # If you come from bash you might have to change your $PATH.
-export PATH=./bin:./node_modules/.bin:$HOME/bin:$PATH
+export PATH="./bin:./node_modules/.bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -112,6 +112,7 @@ bindkey "^R" history-incremental-search-backward
 
 test -e "$HOME/.profile-ext.sh" && source "$HOME/.profile-ext.sh"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "/opt/homebrew/bin/brew" && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 if which brew >/dev/null 2>&1; then
   test -e "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh" && source "$(brew --prefix)/opt/chruby/share/chruby/chruby.sh"
   test -e "$(brew --prefix)/opt/chruby/share/chruby/auto.sh" && source "$(brew --prefix)/opt/chruby/share/chruby/auto.sh"
@@ -120,3 +121,4 @@ fi
 type rbenv >/dev/null && eval "$(rbenv init - zsh)"
 type pyenv >/dev/null && eval "$(pyenv init -)"
 type nodenv >/dev/null && eval "$(nodenv init -)"
+type mise >/dev/null && eval "$(mise activate zsh)"

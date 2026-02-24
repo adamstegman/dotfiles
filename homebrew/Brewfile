@@ -1,16 +1,15 @@
 brew "awscli"
 brew "jq"
+brew "mise"
 
 cask "1password"
 cask "caffeine"
 cask "dash"
-cask "docker"
+cask "docker-desktop"
 cask "flycut"
 cask "hex-fiend"
 cask "iterm2"
-cask "nova"
 cask "runjs"
 
 # Recursive Mono font
-tap "homebrew/cask-fonts"
-cask "homebrew/cask-fonts/font-recursive-code", greedy: true
+cask "font-recursive-code"
