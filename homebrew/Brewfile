@@ -10,6 +10,7 @@ cask "flycut"
 cask "hex-fiend"
 cask "iterm2"
 cask "runjs"
+cask "visual-studio-code"
 
 # Recursive Mono font
 cask "font-recursive-code"
